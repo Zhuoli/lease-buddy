@@ -42,7 +42,7 @@ The site is static (HTML + ES modules). There's no backend, no analytics, and no
 | **Gemma 4 E2B** (`gemma4:e2b`, Ollama) | **7/7** | 3/3 | 2/3: it answered "30 days [§14]" and left out the 60-day auto-renewal clause |
 | **Gemma 3 1B** (the in-browser model; ONNX q4 via Transformers.js in Node) | 5/7 | 2/3 | 1/3 |
 
-What the checker caught from Gemma 3 1B: numbers cited to the wrong clause ("thirty days … [§13]"), a clause id that doesn't exist (`§A9`), and an explanation that turned "sixty (60) days" into "six months". What it **can't** catch is meaning. For example, 1B said "the lease doesn't allow you to bring a cat" when the clause says pets need written consent. That's why every answer shows the exact clauses Gemma saw, and why the summary, contradictions and dates at the top come from code, not the model. I also read every Gemma 4 answer in `results/gemma-check-ollama.json` myself; they match the clauses.
+What the checker caught from Gemma 3 1B: numbers cited to the wrong clause ("thirty days … [§13]"), a clause id that doesn't exist (`§A9`), and an explanation that turned "sixty (60) days" into "six months". What it **can't** catch is meaning. For example, 1B said "the lease doesn't allow you to bring a cat" when the clause says pets need written consent. That's why every answer shows the exact clauses Gemma saw, and why the summary, contradictions and dates at the top come from code, not the model. Every Gemma 4 answer in `results/gemma-check-ollama.json` was also checked by hand against the clauses, and they all match.
 
 The main lesson: small models like to answer from **one** clause. When the lease contradicts itself, the code has to find the contradiction and hand it to the model.
 
