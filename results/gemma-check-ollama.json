@@ -1,0 +1,149 @@
+{
+  "date": "2026-10-03T08:46:38.935Z",
+  "lease": "samples/sample-lease.txt",
+  "engines": [
+    {
+      "engine": "gemma4:e2b (Ollama, CPU)",
+      "qaVerified": "7/7",
+      "qaMentionsKeyNumber": "7/7",
+      "explainVerified": "3/3",
+      "rows": [
+        {
+          "kind": "qa",
+          "q": "How much notice do I need to give before moving out?",
+          "context": [
+            "14",
+            "13",
+            "15"
+          ],
+          "answer": "You need to give the Landlord at least thirty (30) days' written notice before vacating at the end of the term [§14]. However, for renewal, you must give written notice of non-renewal at least sixty (60) days before the end of the current term [§13].",
+          "verified": true,
+          "unsupportedNumbers": [],
+          "badCitations": [],
+          "missedConflicts": [],
+          "uncited": false,
+          "mentionsKeyNumber": true,
+          "ms": 86519,
+          "misattributed": []
+        },
+        {
+          "kind": "qa",
+          "q": "Can my landlord come in whenever they want?",
+          "context": [
+            "A2",
+            "9"
+          ],
+          "answer": "The lease says the management will provide at least twenty-four (24) hours' notice before entering, except in an emergency [§A2]. However, the landlord may enter the unit at any time upon reasonable notice for specific reasons [§9].",
+          "verified": true,
+          "unsupportedNumbers": [],
+          "badCitations": [],
+          "missedConflicts": [],
+          "uncited": false,
+          "mentionsKeyNumber": true,
+          "ms": 59509,
+          "misattributed": []
+        },
+        {
+          "kind": "qa",
+          "q": "Will I get my whole deposit back?",
+          "context": [
+            "5",
+            "10"
+          ],
+          "answer": "You will have a cleaning fee of $300 deducted from your security deposit at move-out [§5]. This cleaning fee is non-refundable no matter the condition of the unit [§5].",
+          "verified": true,
+          "unsupportedNumbers": [],
+          "badCitations": [],
+          "missedConflicts": [],
+          "uncited": false,
+          "mentionsKeyNumber": true,
+          "ms": 46682,
+          "misattributed": []
+        },
+        {
+          "kind": "qa",
+          "q": "What happens if I pay rent a few days late?",
+          "context": [
+            "4",
+            "A3",
+            "3"
+          ],
+          "answer": "If rent is not received by the 5th day of the month, you will pay a late fee of $150, plus $15 per day until it is paid in full [§4]. However, rent received after the 3rd day of the month is considered late and subject to late charges [§A3].",
+          "verified": true,
+          "unsupportedNumbers": [],
+          "badCitations": [],
+          "missedConflicts": [],
+          "uncited": false,
+          "mentionsKeyNumber": true,
+          "ms": 68843,
+          "misattributed": []
+        },
+        {
+          "kind": "qa",
+          "q": "Can I get a cat?",
+          "context": [
+            "10"
+          ],
+          "answer": "No pets are allowed without the Landlord's prior written consent [§10]. If a pet is approved, there is a pet rent of $50 per month and a non-refundable pet fee of $400 [§10]. You will need to get written consent from the Landlord to have a cat [§10].",
+          "verified": true,
+          "unsupportedNumbers": [],
+          "badCitations": [],
+          "missedConflicts": [],
+          "uncited": false,
+          "mentionsKeyNumber": true,
+          "ms": 84703,
+          "misattributed": []
+        },
+        {
+          "kind": "qa",
+          "q": "What if I need to break the lease?",
+          "context": [
+            "12"
+          ],
+          "answer": "You can end the lease early by giving sixty (60) days' written notice [§12]. You will also have to pay an early termination fee equal to two (2) months' rent [§12].",
+          "verified": true,
+          "unsupportedNumbers": [],
+          "badCitations": [],
+          "missedConflicts": [],
+          "uncited": false,
+          "mentionsKeyNumber": true,
+          "ms": 55579,
+          "misattributed": []
+        },
+        {
+          "kind": "qa",
+          "q": "Is there a parking spot included?",
+          "context": [],
+          "answer": "(no matching clause; the app answers \"The lease doesn't mention that\" without calling Gemma)",
+          "verified": true,
+          "mentionsKeyNumber": true,
+          "ms": 0
+        },
+        {
+          "kind": "explain",
+          "clause": "13",
+          "answer": "This Lease will automatically renew for twelve (12) month terms. Either you or the landlord must give written notice of non-renewal at least sixty (60) days before the current term ends.",
+          "verified": true,
+          "unsupportedNumbers": [],
+          "ms": 65208
+        },
+        {
+          "kind": "explain",
+          "clause": "5",
+          "answer": "You have to pay a security deposit of $2,150. There is a non-refundable cleaning fee of $300 that will be taken out of your deposit when you move out.",
+          "verified": true,
+          "unsupportedNumbers": [],
+          "ms": 41878
+        },
+        {
+          "kind": "explain",
+          "clause": "9",
+          "answer": "The landlord can enter your unit anytime if they give you reasonable notice. They can do this to inspect, make repairs, or show the unit to new tenants.",
+          "verified": true,
+          "unsupportedNumbers": [],
+          "ms": 46202
+        }
+      ]
+    }
+  ]
+}

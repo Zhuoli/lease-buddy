@@ -1,0 +1,156 @@
+{
+  "date": "2026-10-03T08:58:15.790Z",
+  "lease": "samples/sample-lease.txt",
+  "conflictHints": false,
+  "engines": [
+    {
+      "engine": "gemma-3-1b-it (ONNX q4, transformers.js, CPU)",
+      "qaVerified": "1/3",
+      "qaMentionsKeyNumber": "2/3",
+      "explainVerified": "not run",
+      "rows": [
+        {
+          "kind": "qa",
+          "q": "How much notice do I need to give before moving out?",
+          "context": [
+            "14",
+            "13",
+            "15"
+          ],
+          "answer": "You need to give at least thirty days’ notice, as stated in [§14].  Landlord may increase rent for renewal, as detailed in [§15].  The lease requires a minimum notice period of sixty days before a renewal term begins, as outlined in [§13].",
+          "verified": true,
+          "unsupportedNumbers": [],
+          "badCitations": [],
+          "missedConflicts": [],
+          "misattributed": [],
+          "uncited": false,
+          "mentionsKeyNumber": false,
+          "ms": 8773
+        },
+        {
+          "kind": "qa",
+          "q": "Can my landlord come in whenever they want?",
+          "context": [
+            "A2",
+            "9"
+          ],
+          "answer": "The lease states that management must provide at least twenty-four (24) hours’ notice before entering the unit, [§A2].  Landlord may enter the unit at any time upon reasonable notice to inspect, make repairs, or show the unit to prospective tenants, [§9].  However, the lease doesn’t explicitly allow for unlimited entry [§A9].",
+          "verified": false,
+          "unsupportedNumbers": [],
+          "badCitations": [
+            "A9"
+          ],
+          "missedConflicts": [],
+          "misattributed": [],
+          "uncited": false,
+          "mentionsKeyNumber": true,
+          "ms": 9329
+        },
+        {
+          "kind": "qa",
+          "q": "What happens if I pay rent a few days late?",
+          "context": [
+            "4",
+            "A3",
+            "3"
+          ],
+          "answer": "The lease states that a late fee of $150 is due if rent is not received by the 5th day of the month. [§13]  Additionally, a $15 per day charge is added to the rent until it’s paid in full. [§A3]  The tenant is required to pay $2,150 per month, due on the 1st of each month. [§3]",
+          "verified": false,
+          "unsupportedNumbers": [],
+          "badCitations": [
+            "13"
+          ],
+          "missedConflicts": [],
+          "misattributed": [
+            {
+              "n": 15,
+              "cited": [
+                "A3"
+              ],
+              "actual": [
+                "4"
+              ]
+            }
+          ],
+          "uncited": false,
+          "mentionsKeyNumber": true,
+          "ms": 13342
+        }
+      ]
+    },
+    {
+      "engine": "gemma4:e2b (Ollama, CPU)",
+      "qaVerified": "2/3",
+      "qaMentionsKeyNumber": "2/3",
+      "explainVerified": "not run",
+      "rows": [
+        {
+          "kind": "qa",
+          "q": "How much notice do I need to give before moving out?",
+          "context": [
+            "14",
+            "13",
+            "15"
+          ],
+          "answer": "You need to give the Landlord at least thirty (30) days' written notice before vacating at the end of the term [§14]. This applies when you are vacating at the end of the term [§14].",
+          "verified": false,
+          "unsupportedNumbers": [],
+          "badCitations": [],
+          "missedConflicts": [
+            {
+              "slot": "end_of_term_notice",
+              "label": "Notice to leave at end of term",
+              "missing": [
+                {
+                  "clause": "13",
+                  "value": 60,
+                  "unit": "days",
+                  "quote": "This Lease shall automatically renew for successive twelve (12) month terms unless either party gives written notice of non-renewal at least sixty (60) days before the end of the then-current term."
+                }
+              ]
+            }
+          ],
+          "misattributed": [],
+          "uncited": false,
+          "mentionsKeyNumber": false,
+          "ms": 50022
+        },
+        {
+          "kind": "qa",
+          "q": "Can my landlord come in whenever they want?",
+          "context": [
+            "A2",
+            "9"
+          ],
+          "answer": "The management will provide at least twenty-four (24) hours' notice before entering a unit, except in an emergency [§A2]. The landlord may enter the unit at any time upon reasonable notice to inspect, make repairs, or show the unit to prospective tenants [§9].",
+          "verified": true,
+          "unsupportedNumbers": [],
+          "badCitations": [],
+          "missedConflicts": [],
+          "misattributed": [],
+          "uncited": false,
+          "mentionsKeyNumber": true,
+          "ms": 61716
+        },
+        {
+          "kind": "qa",
+          "q": "What happens if I pay rent a few days late?",
+          "context": [
+            "4",
+            "A3",
+            "3"
+          ],
+          "answer": "If rent is not received by the 5th day of the month, you will pay a late fee of $150, plus $15 per day until the rent is paid in full [§4]. Rent received after the 3rd day of the month is considered late and subject to late charges [§A3].",
+          "verified": true,
+          "unsupportedNumbers": [],
+          "badCitations": [],
+          "missedConflicts": [],
+          "misattributed": [],
+          "uncited": false,
+          "mentionsKeyNumber": true,
+          "ms": 97437
+        }
+      ]
+    }
+  ]
+}

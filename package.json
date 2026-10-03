@@ -1,0 +1,15 @@
+{
+  "name": "lease-buddy",
+  "version": "1.0.0",
+  "description": "Read your lease like a friend who has read a lot of leases. Rule checks + Gemma, all on your device.",
+  "type": "module",
+  "license": "Apache-2.0",
+  "scripts": {
+    "test": "node --test test/",
+    "gemma:check": "node scripts/gemma-check.mjs",
+    "serve": "npx --yes http-server -p 8080 -c-1 ."
+  },
+  "devDependencies": {
+    "@huggingface/transformers": "4.3.0"
+  }
+}

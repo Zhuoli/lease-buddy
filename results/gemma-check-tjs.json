@@ -1,0 +1,190 @@
+{
+  "date": "2026-10-03T08:55:57.452Z",
+  "lease": "samples/sample-lease.txt",
+  "engines": [
+    {
+      "engine": "gemma-3-1b-it (ONNX q4, transformers.js, CPU)",
+      "qaVerified": "5/7",
+      "qaMentionsKeyNumber": "4/7",
+      "explainVerified": "2/3",
+      "rows": [
+        {
+          "kind": "qa",
+          "q": "How much notice do I need to give before moving out?",
+          "context": [
+            "14",
+            "13",
+            "15"
+          ],
+          "answer": "Okay, let’s tackle this!\n\nYou need to give the landlord at least thirty days’ notice before moving out, as stated in [§13].  The lease automatically renews for twelve months unless the landlord gives written notice of non-renewal at least sixty days before the end of the current term, as detailed in [§14].  The lease doesn’t say otherwise.",
+          "verified": false,
+          "unsupportedNumbers": [],
+          "badCitations": [],
+          "missedConflicts": [],
+          "uncited": false,
+          "mentionsKeyNumber": false,
+          "ms": 12779,
+          "misattributed": [
+            {
+              "n": 30,
+              "cited": [
+                "13"
+              ],
+              "actual": [
+                "14",
+                "15"
+              ]
+            },
+            {
+              "n": 12,
+              "cited": [
+                "14"
+              ],
+              "actual": [
+                "13"
+              ]
+            },
+            {
+              "n": 60,
+              "cited": [
+                "14"
+              ],
+              "actual": [
+                "13"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "qa",
+          "q": "Can my landlord come in whenever they want?",
+          "context": [
+            "A2",
+            "9"
+          ],
+          "answer": "The lease doesn’t say that the landlord needs to give notice before entering. [§A2] “Landlord may enter the unit at any time upon reasonable notice to inspect, make repairs, or show the unit to prospective tenants.”\nThe lease doesn’t say the landlord can enter at any time. [§9] “Landlord may enter the unit at any time upon reasonable notice to inspect, make repairs, or show the unit to prospective tenants.”",
+          "verified": true,
+          "unsupportedNumbers": [],
+          "badCitations": [],
+          "missedConflicts": [],
+          "uncited": false,
+          "mentionsKeyNumber": false,
+          "ms": 15204,
+          "misattributed": []
+        },
+        {
+          "kind": "qa",
+          "q": "Will I get my whole deposit back?",
+          "context": [
+            "5",
+            "10"
+          ],
+          "answer": "The lease specifies a security deposit of $2,150 [§5]. However, a cleaning fee of $300 is non-refundable and will be deducted from the deposit, regardless of the unit’s condition [§10].  The pet rent requirement, $50 per month, and a non-refundable pet fee of $400, [§10] are also outlined.",
+          "verified": false,
+          "unsupportedNumbers": [],
+          "badCitations": [],
+          "missedConflicts": [],
+          "uncited": false,
+          "mentionsKeyNumber": true,
+          "ms": 9872,
+          "misattributed": [
+            {
+              "n": 300,
+              "cited": [
+                "10"
+              ],
+              "actual": [
+                "5"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "qa",
+          "q": "What happens if I pay rent a few days late?",
+          "context": [
+            "4",
+            "A3",
+            "3"
+          ],
+          "answer": "The lease states that a $150 late fee is due if rent isn’t received by the 5th, and a $15 per day charge applies until the full amount is paid. However, the lease also allows for a $150 late fee plus $15 per day if rent is received after the 3rd.",
+          "verified": true,
+          "unsupportedNumbers": [],
+          "badCitations": [],
+          "missedConflicts": [],
+          "uncited": true,
+          "mentionsKeyNumber": true,
+          "ms": 8959,
+          "misattributed": []
+        },
+        {
+          "kind": "qa",
+          "q": "Can I get a cat?",
+          "context": [
+            "10"
+          ],
+          "answer": "The lease doesn’t allow you to bring a cat. [§10] You need to get a pet rent of $50 per month and a non-refundable pet fee of $400.  The lease requires a pet rent of $50 per month and a non-refundable pet fee of $400.  You must obtain approval from the Landlord before bringing a pet. [§10]",
+          "verified": true,
+          "unsupportedNumbers": [],
+          "badCitations": [],
+          "missedConflicts": [],
+          "uncited": false,
+          "mentionsKeyNumber": true,
+          "ms": 9188,
+          "misattributed": []
+        },
+        {
+          "kind": "qa",
+          "q": "What if I need to break the lease?",
+          "context": [
+            "12"
+          ],
+          "answer": "The lease doesn’t say you can break the lease. [§12] Early termination requires a sixty-day notice and a two-month penalty. Paying a penalty is outlined in [§12].",
+          "verified": true,
+          "unsupportedNumbers": [],
+          "badCitations": [],
+          "missedConflicts": [],
+          "uncited": false,
+          "mentionsKeyNumber": false,
+          "ms": 5140,
+          "misattributed": []
+        },
+        {
+          "kind": "qa",
+          "q": "Is there a parking spot included?",
+          "context": [],
+          "answer": "(no matching clause; the app answers \"The lease doesn't mention that\" without calling Gemma)",
+          "verified": true,
+          "mentionsKeyNumber": true,
+          "ms": 0
+        },
+        {
+          "kind": "explain",
+          "clause": "13",
+          "answer": "This clause means that the lease will automatically continue for another twelve months. If either of you doesn’t give notice before six months, the lease will end. You need to tell the landlord at least sixty days in advance if you don’t want the lease to continue.",
+          "verified": false,
+          "unsupportedNumbers": [
+            6
+          ],
+          "ms": 5444
+        },
+        {
+          "kind": "explain",
+          "clause": "5",
+          "answer": "Okay, so here’s what the security deposit clause says:\n\nThe tenant (the renter) is required to put aside $2,150 as a security deposit.\n\nThey also have to pay a cleaning fee of $300, and that fee won’t be returned if the apartment isn’t in good shape when they leave.",
+          "verified": true,
+          "unsupportedNumbers": [],
+          "ms": 6989
+        },
+        {
+          "kind": "explain",
+          "clause": "9",
+          "answer": "Okay, so basically, the landlord has the right to come into your apartment whenever they need to, like to look for problems or just to show it to potential renters. They need to give you a reasonable amount of notice beforehand. \n\nHere’s the clause:\n\n**[§9] LANDLORD ENTRY.** Landlord may enter the unit at any time upon reasonable notice to inspect, make repairs, or show the unit to prospective tenants.",
+          "verified": true,
+          "unsupportedNumbers": [],
+          "ms": 9539
+        }
+      ]
+    }
+  ]
+}

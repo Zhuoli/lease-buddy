@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lease Buddy: read your lease with a friend (and Gemma)</title>
+  <meta name="description" content="Paste a lease. Lease Buddy finds the dates, fees and clauses that contradict each other, and Gemma explains them in plain words, all on your own device." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏠</text></svg>" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <h1>🏠 Lease Buddy</h1>
+    <p class="tag">Read your lease like a friend who has read a lot of leases. Dates, fees and clauses that disagree with each other, explained in plain words by <strong>Gemma, running on your own device</strong>.</p>
+    <p class="privacy">🔒 Your lease never leaves this tab. No server, no account, no tracking. This is a static page, and the AI runs locally.</p>
+  </header>
+
+  <main>
+    <section class="card" id="input-card">
+      <h2>1. Your lease</h2>
+      <div class="row">
+        <button id="load-sample" class="secondary">Try the sample lease</button>
+        <label class="secondary file">Open .txt or .pdf <input id="file" type="file" accept=".txt,.md,.pdf,text/plain,application/pdf" hidden /></label>
+        <label class="inline">Lease end date (if not found) <input id="end-date" type="date" /></label>
+      </div>
+      <textarea id="lease" rows="12" placeholder="Paste your lease text here…" aria-label="Lease text"></textarea>
+      <button id="analyze" class="primary">Check my lease</button>
+      <p class="fine">Not legal advice. Lease Buddy points at things to ask about; a local tenant-rights group or lawyer can tell you what the law says where you live.</p>
+    </section>
+
+    <section id="results" hidden>
+      <section class="card">
+        <h2>2. The short version</h2>
+        <div id="terms" class="terms"></div>
+      </section>
+
+      <section class="card warn" id="conflicts-card">
+        <h2>⚠️ Clauses that contradict each other</h2>
+        <p class="sub">The same lease says two different things. Get the landlord to confirm in writing which one applies.</p>
+        <div id="conflicts"></div>
+      </section>
+
+      <section class="card">
+        <h2>📅 Dates you can't miss</h2>
+        <div id="dates"></div>
+        <button id="ics" class="secondary">Add to my calendar (.ics)</button>
+      </section>
+
+      <section class="card">
+        <h2>🔎 Worth a second look</h2>
+        <div id="flags"></div>
+      </section>
+
+      <section class="card">
+        <h2>✉️ Questions to send the landlord</h2>
+        <ol id="questions"></ol>
+        <button id="copy-questions" class="secondary">Copy questions</button>
+      </section>
+
+      <section class="card gemma">
+        <h2>3. Ask Gemma about your lease</h2>
+        <div class="engine">
+          <label><input type="radio" name="engine" value="browser" checked /> <strong>Gemma 3 1B in this browser</strong>: zero setup, one-time ~0.8–1zero setup, one-time ~760&nbsp;MB download (WebGPU, or CPU fallback), cached after that.nbsp;GB download (WebGPU, or CPU fallback), cached after that. It's small, so it sometimes cites the wrong clause. The checker below flags that.</label>
+          <label><input type="radio" name="engine" value="ollama" /> <strong>Gemma 4 via Ollama on my computer</strong> (recommended for answers: <code>gemma4:e2b</code> passed all 7 test questions)</label>
+          <div id="ollama-opts" class="row" hidden>
+            <input id="ollama-url" value="http://localhost:11434" aria-label="Ollama URL" />
+            <input id="ollama-model" value="gemma4:e2b" aria-label="Ollama model" />
+            <details><summary>Setup</summary><pre>ollama pull gemma4:e2b
+OLLAMA_ORIGINS="https://lease-buddy-gemma.vercel.app" ollama serve</pre></details>
+          </div>
+          <button id="load-model" class="primary">Start Gemma</button>
+          <div id="model-status" class="status" role="status"></div>
+          <progress id="model-progress" max="100" value="0" hidden></progress>
+        </div>
+        <div class="row">
+          <input id="question" placeholder="e.g. How much notice do I need to give before moving out?" aria-label="Question" />
+          <button id="ask" class="primary" disabled>Ask</button>
+        </div>
+        <div class="chips" id="chips"></div>
+        <div id="answers"></div>
+        <p class="fine">Gemma only sees the clauses Lease Buddy found for your question, plus any clause that contradicts them. Every answer is then checked: if it cites a clause that wasn't provided, or a number that isn't in the cited clause, you'll see a warning.</p>
+      </section>
+    </section>
+  </main>
+  <footer>
+    Open source (Apache-2.0) · <a href="https://github.com/Zhuoli/lease-buddy">GitHub</a> · Built for the DEV Hacktoberfest 2026 Weekend Challenge · Gemma is provided under the Gemma terms of use.
+  </footer>
+  <script type="module" src="./src/app.js"></script>
+</body>
+</html>
