@@ -5,7 +5,7 @@
   "type": "module",
   "license": "Apache-2.0",
   "scripts": {
-    "test": "node --test test/",
+    "test": "node --test test/*.test.mjs",
     "gemma:check": "node scripts/gemma-check.mjs",
     "serve": "npx --yes http-server -p 8080 -c-1 ."
   },
